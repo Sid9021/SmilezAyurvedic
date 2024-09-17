@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/Aboutus/index.jsx", "app/components/Articles/index.jsx", "app/components/Banner/index.jsx", "app/components/Beliefs/index.jsx", "app/components/Dedicated/index.jsx", "app/components/Digital/index.jsx", "app/components/FAQ/index.jsx", "app/components/Featured/index.jsx", "app/components/Footer/index.jsx", "app/components/Insta/index.jsx", "app/components/Joinus/index.jsx", "app/components/Manage/index.jsx", "app/components/Navbar/Contactus.jsx", "app/components/Navbar/Drawer.jsx", "app/components/Navbar/Drawerdata.jsx", "app/components/Navbar/index.jsx", "app/components/Navbar/Navbar.jsx", "app/components/Ourteam/index.jsx", "app/components/Testimonials/index.jsx", "app/components/Wework/index.jsx", "app/layout.jsx", "app/page.jsx"],
+  "exclude": ["node_modules"]
+}
