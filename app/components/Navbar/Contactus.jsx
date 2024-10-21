@@ -84,18 +84,18 @@ const Contactusform = ({ isOpenForm }) => {
           </button>
         </div>{
           isOpenForm && (<>
-          <div className="block lg:hidden">
-          <button
-            type="button"
-            className="text-black hover:bg-gray-700 hover:text-purple block py-2 rounded-md text-base font-medium"
-            onClick={openModal}
-          >
-            Book Now
-          </button>
-        </div>
+            <div className="block lg:hidden">
+              <button
+                type="button"
+                className="text-black hover:bg-gray-700 hover:text-purple block py-2 rounded-md text-base font-medium"
+                onClick={openModal}
+              >
+                Book Now
+              </button>
+            </div>
           </>)
         }
-        
+
       </div>
 
       <Transition appear show={isOpen} as={Fragment}>
@@ -124,6 +124,13 @@ const Contactusform = ({ isOpenForm }) => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                  <button
+                    onClick={closeModal}  // Close button
+                    className="absolute top-4 right-4 text-2xl text-gray-500 hover:text-gray-700 focus:outline-none"
+                  >
+                    &times; {/* Close icon */}
+                  </button>
+
                   <div className="py-8 lg:py-8 px-4 mx-auto max-w-screen-md">
                     <div className="flex flex-shrink-0 items-center justify-center">
                       <img src="/images/logo/logo.png" alt="" className="w-[350px]" />
