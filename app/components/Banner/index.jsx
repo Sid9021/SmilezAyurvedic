@@ -3,7 +3,7 @@ import Image from "next/image"
 const Banner = () => {
   return (
     <div className="mx-auto max-w-7xl my-10 sm:py-10 px-6 lg:px-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 my-16">
+      <div className="flex justify-around">
         {/* COLUMN-1 */}
 
         <div id="#home-page" className="mx-auto sm:mx-0">
@@ -28,10 +28,10 @@ const Banner = () => {
 
         <div className="lg:-m-24 lg:pt-20 hidden lg:block">
           <Image
-            src="/images/banner/banner.svg"
+            src="/images/banner/Spa.png"
             alt="hero-image"
-            width={800}
-            height={642}
+            width={500}
+            height={500}
           />
         </div>
       </div>

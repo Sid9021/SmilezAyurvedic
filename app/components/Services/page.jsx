@@ -56,7 +56,7 @@ const Services = () => {
               {service.id === 5 && (
                 <div>
                   <Link href='/services-all'>
-                    <button className={`cursor-pointer p-4 rounded-lg ${selectedService.id === service.id
+                    <button className={`cursor-pointer p-4 rounded-lg font-semibold ${selectedService.id === service.id
                       ? "bg-navyblue text-white"
                       : "bg-white text-darkblue"
                       } ${service.id === 5 ? "w-[190px]" : ""} hover:bg-navyblue hover:text-white transition-colors`}>
@@ -80,7 +80,7 @@ const Services = () => {
                 <li
                   key={service.id}
                   onClick={() => setSelectedService(service)}
-                  className={`cursor-pointer p-4 rounded-lg ${selectedService.id === service.id
+                  className={`cursor-pointer p-4 rounded-lg font-semibold ${selectedService.id === service.id
                     ? "bg-navyblue text-white"
                     : "bg-white text-darkblue"
                     } ${service.id === 5 ? "w-[180px]" : ""} hover:bg-navyblue hover:text-white transition-colors`}

@@ -13,35 +13,40 @@ const Contactusform = () => {
     input3: ""
   });
 
+  const [emailError, setEmailError] = useState(""); // For email validation
+
   const handleChange = e => {
     const { name, value } = e.target;
-    console.log(`Updating ${name} to ${value}`);
     setInputValues(prevState => ({ ...prevState, [name]: value }));
+
+    // Email validation check
+    if (name === "input2") {
+      const emailValid = validateEmail(value);
+      setEmailError(emailValid ? "" : "Please enter a valid email address");
+    }
   };
 
-  const handleClick = () => {
+  const validateEmail = email => {
+    // Regex for email validation
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  const handleSubmit = async () => {
+    // Submit function when Book Now button is clicked
     alert(
       `Name: ${inputValues.input1}, Email-address: ${inputValues.input2}, Message: ${inputValues.input3}`
     );
-    setIsOpen(false);
-  };
-
-  const handleSubmit = async event => {
-    event.preventDefault();
 
     try {
-      console.log("Arg", inputValues.input1, inputValues.input2, inputValues.input3);
       const response = await axios.get('/api/send-email', {
         params: {
           name: inputValues.input1,
           email: inputValues.input2,
           text: inputValues.input3
         }
-      }
-      );
-      console.log("Response from backend: ", response.data)
-
-
+      });
+      console.log("Response from backend: ", response.data);
       alert('Message sent successfully!');
       setInputValues({
         input1: "",
@@ -55,7 +60,8 @@ const Contactusform = () => {
     }
   };
 
-  const isDisabled = Object.values(inputValues).some(value => value === "");
+  const isDisabled =
+    Object.values(inputValues).some(value => value === "") || emailError;
 
   const closeModal = () => {
     setIsOpen(false);
@@ -107,21 +113,13 @@ const Contactusform = () => {
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <div className="py-8 lg:py-8 px-4 mx-auto max-w-screen-md">
                     <div className="flex flex-shrink-0 items-center justify-center">
-                      <Link
-                        href="/"
-                        className="text-2xl sm:text-4xl font-semibold text-black"
-                      >
-                        Smilez Wellness Center
-                      </Link>
+                      <img src="/images/logo/logo.png" alt="" className="w-[350px]" />
                     </div>
                     <p className="mb-8 lg:mb-16 mt-8 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
                       Contact us now? Want to send us a feedback?
                     </p>
-                    <form
-                      action="#"
-                      className="space-y-8"
-                      onSubmit={handleSubmit}
-                    >
+
+                    <div className="space-y-8">
                       <div>
                         <label
                           htmlFor="text"
@@ -135,18 +133,18 @@ const Contactusform = () => {
                           value={inputValues.input1}
                           onChange={handleChange}
                           type="text"
-                          autoComplete="current-password"
                           required
                           className="relative block w-full appearance-none rounded-md border border-linegrey px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                           placeholder="Name..."
                         />
                       </div>
+
                       <div>
                         <label
                           htmlFor="email"
                           className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                         >
-                          Your email
+                          Your Email
                         </label>
                         <input
                           id="email"
@@ -154,18 +152,21 @@ const Contactusform = () => {
                           value={inputValues.input2}
                           onChange={handleChange}
                           type="email"
-                          autoComplete="current-password"
                           required
                           className="relative block w-full appearance-none rounded-md border border-linegrey px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                           placeholder="xyz@email.com"
                         />
+                        {emailError && (
+                          <p className="mt-1 text-sm text-red-600">{emailError}</p>
+                        )}
                       </div>
+
                       <div className="sm:col-span-2">
                         <label
                           htmlFor="message"
                           className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
                         >
-                          Your message
+                          Your Message
                         </label>
                         <textarea
                           id="message"
@@ -173,18 +174,30 @@ const Contactusform = () => {
                           value={inputValues.input3}
                           onChange={handleChange}
                           className="relative block w-full appearance-none rounded-md border border-linegrey px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                          placeholder="Leave a comment..."
+                          placeholder="Leave a message..."
                         ></textarea>
                       </div>
+
                       <button
-                        type="submit"
-                        onClick={handleClick}
+                        type="button"
+                        onClick={handleSubmit}
                         disabled={isDisabled}
-                        className="py-3 px-5 text-sm disabled:opacity-50 font-medium w-full text-center text-white rounded-lg bg-blue focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        className="relative py-3 px-5 text-xl font-medium w-full text-center text-black rounded-full hover:scale-105 bg-white hover:bg-gradient-to-r hover:from-blue-500 hover:via-pink-500 hover:to-purple-500 border border-transparent bg-clip-padding hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 disabled:opacity-50 transition duration-300 ease-in-out"
+                        style={{
+                          background: "linear-gradient(to right, blue, pink, purple)",
+                          backgroundClip: "padding-box",
+                          WebkitBackgroundClip: "padding-box",
+                          border: "2px solid transparent",
+                          borderRadius: "9999px",
+                          padding: "3px", // Creates space between the gradient and inner white background
+                        }}
                       >
-                        Send message
+                        <span className="block bg-white rounded-full w-full h-full p-3 transition-colors duration-300 ease-in-out">
+                          Book Now
+                        </span>
                       </button>
-                    </form>
+
+                    </div>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>

@@ -28,9 +28,9 @@ const Aboutdata = [
 
 const Aboutus = () => {
   return (
-    <section id="aboutus-section" className="relative bg-lightgrey py-24 my-32 rounded-3xl overflow-hidden">
+    <section id="aboutus-section" className="relative bg-lightgrey py-24 my-16 rounded-3xl overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-teal-500 to-blue-600 opacity-30 z-0"></div>
-      <div className="relative mx-auto max-w-7xl px-4 lg:px-10">
+      <div className="relative mx-auto max-w-7xl px-4 lg:px-10 ">
         <Image
           src="/images/aboutus/dots.svg"
           width={100}
@@ -38,11 +38,11 @@ const Aboutus = () => {
           alt="decorative dots"
           className="absolute bottom-1 -left-20 opacity-50"
         />
-        <div className="text-right mb-16">
-          <h3 className="text-lg tracking-widest text-blue font-semibold">
+        <div className="text-right lg:mb-16">
+          <h3 className="text-lg tracking-widest text-center lg:text-right text-blue font-semibold">
             ABOUT US
           </h3>
-          <h4 className="text-4xl lg:text-6xl font-bold text-darkblue leading-tight">
+          <h4 className="text-4xl lg:text-6xl font-bold text-center lg:text-right text-darkblue leading-tight">
             Know more about us.
           </h4>
         </div>
@@ -76,16 +76,16 @@ const Aboutus = () => {
           ))}
         </div> */}
 
-        <div className="relative flex flex-col w-full h-[300px] mx-auto mt-24">
+        <div className="flex flex-col w-full h-[300px] mx-auto lg:mt-24">
           <Image
             src="/images/aboutus/lobby.jpg"
             alt="man icon"
             width={480}
             height={480}
-            className="absolute top-[-110px] left-0 rounded transform scale-110"
+            className="absolute top-[70px] hidden lg:block left-0 rounded transform scale-110"
           />
           <div className="relative bg-white p-8 rounded-3xl shadow-xl max-w-2xl ml-auto">
-            <h3 className="text-2xl font-medium text-darkblue mb-4">
+            <h3 className="text-2xl font-medium text-darkblue mb-4 text-center lg:text-left">
               Smilez Ayurveda: A Sanctuary of Wellness
             </h3>
             <p className="text-lg font-light text-gray-700">

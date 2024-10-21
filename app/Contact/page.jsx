@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { useState } from 'react';
 import axios from 'axios';
+import Navbar from '../components/Navbar/Navbar';
 
 
 export default function ContactPage() {
@@ -47,9 +48,10 @@ export default function ContactPage() {
 
   return (
     <div>
+      <Navbar/>
       {/* Banner Section */}
-      <div className="relative h-[50vh] w-full">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#81df83] via-[#27ab4c] to-[#0e9014] flex items-center justify-center">
+      <div className="relative top-[50px] h-[60vh] w-full">
+        <div className="absolute inset-0  bg-gradient-to-r from-[#81df83] via-[#27ab4c] to-[#0e9014] flex items-center justify-center">
           <h1 className="text-5xl font-bold text-white drop-shadow-md">
             Get In Touch With Us
           </h1>

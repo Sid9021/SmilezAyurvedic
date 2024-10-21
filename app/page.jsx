@@ -13,25 +13,29 @@ import Joinus from "./components/Joinus/index"
 import Insta from "./components/Insta/index"
 import Services from "./components/Services/page"
 import Featured from "./components/Featured"
+import Navbar from "./components/Navbar/index"
+import Footer from "./components/Footer/index"
 
 export default function Home() {
   return (
     <main>
+      <Navbar/>
       <Banner />
       <Aboutus />
       <Services/>
-      <Dedicated />
+      {/* <Dedicated /> */}
       {/* <Digital /> */}
       {/* <Beliefs /> */}
-      <Wework />
-      <Ourteam />
+      {/* <Wework />
+      <Ourteam /> */}
       {/* <Featured /> */}
       {/* <Manage /> */}
       <FAQ />
       <Testimonials />
-      <Articles />
-      <Joinus />
-      <Insta />
+      {/* <Articles /> */}
+      {/* <Joinus /> */}
+      {/* <Insta /> */}
+      <Footer/>
     </main>
   )
 }

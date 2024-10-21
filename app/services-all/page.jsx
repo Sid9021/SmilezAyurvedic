@@ -4,15 +4,26 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
+import Navbar from "../components/Navbar/index"
+import Footer from "../components/Footer/index"
 
 export default function ServicesAll() {
 
-  const [isSticky, setIsSticky] = useState(false);
+  const [isSticky, setIsSticky] = useState(true);
+
+
+  const [sidebarTop, setSidebarTop] = useState(115); // Initial top value, same as the navbar height
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      // Adjust the value here based on where you want the sticky effect to start
+
+      // Adjust the top value based on scroll position, limit it to a minimum value
+      const newSidebarTop = Math.max(75, 110 - scrollTop); // Shrink the top value down to 40px
+
+      setSidebarTop(newSidebarTop);
+
+      // Adjust sticky state for navbar (optional, as you already have it)
       if (scrollTop > 100) {
         setIsSticky(true);
       } else {
@@ -22,13 +33,35 @@ export default function ServicesAll() {
 
     window.addEventListener('scroll', handleScroll);
 
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-useEffect(() => {
+  const [activeLink, setActiveLink] = useState(null) // State to track the active link
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link) // Update the active link when a link is clicked
+  }
+
+  const links = [
+    { name: "Tibetan Marma", href: "/services-all/#Tibetan Marma" },
+    { name: "Relaxation", href: "/services-all/#Relaxation" },
+    { name: "Knee Pain", href: "/services-all/#Knee Pain" },
+    { name: "Bone Setting / Alignment", href: "/services-all/#Bone Setting / Alignment" },
+    { name: "Acupuncture", href: "/services-all/#Acupuncture" },
+    { name: "Weight Reduction", href: "/services-all/#Weight Reduction" },
+    { name: "Detoxification", href: "/services-all/#Detoxification" },
+    { name: "Varicose Ulcer", href: "/services-all/#Varicose Ulcer" },
+    { name: "Sciatica Pain", href: "/services-all/#Sciatica Pain" },
+    { name: "Cervical Spondylosis", href: "/services-all/#Cervical Spondylosis" },
+    { name: "Skin Treatments", href: "/services-all/#Skin Treatments" },
+    { name: "Cupping Therapy", href: "/services-all/#Cupping Therapy" },
+    { name: "Pain Management", href: "/services-all/#Pain Management" },
+    { name: "Post Partum Care", href: "/services-all/#Post Partum Care" },
+  ]
+
+  useEffect(() => {
     // Function to scroll to an element with an offset
     function scrollToWithOffset(targetId, offset) {
       const targetElement = document.getElementById(targetId);
@@ -61,70 +94,68 @@ useEffect(() => {
       });
     };
   }, []);
-  
+
   return (
     <>
       <Head>
         <title>Our Services</title>
         <meta name="description" content="Explore our variety of treatments and health packages." />
       </Head>
-
-      <div>
+      <Navbar />
+      <div className='relative'>
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold text-center my-10">Our Wellness Services</h1>
 
-          <div className="relative flex justify-center items-center">
-            {/* Sticky Buttons Container */}
-            <div className={`transition-all duration-300 rounded-xl bg-[#d7d7d7] py-4 ${isSticky ? 'fixed top-20 z-20' : 'relative'}`}>
-              <div className="container mx-auto px-4 flex flex-wrap justify-center space-x-4">
-                <Link href="/services-all/#Tibetan Marma">
-                  <p className="bg-[#38569c] text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mb-4">Tibetan Marma</p>
-                </Link>
-                <Link href="/services-all/#Relaxation">
-                  <p className="bg-[#38569c] text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mb-4">Relaxation</p>
-                </Link>
-                <Link href="/services-all/#Knee Pain">
-                  <p className="bg-[#38569c] text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mb-4">Knee Pain</p>
-                </Link>
-                <Link href="/services-all/#Bone Setting / Alignment">
-                  <p className="bg-[#38569c] text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mb-4">Bone Setting / Alignment</p>
-                </Link>
-                <Link href="/services-all/#Acupuncture">
-                  <p className="bg-[#38569c] text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mb-4">Acupuncture</p>
-                </Link>
-                <Link href="/services-all/#Weight Reduction">
-                  <p className="bg-[#38569c] text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mb-4">Weight Reduction</p>
-                </Link>
-                <Link href="/services-all/#Detoxification">
-                  <p className="bg-[#38569c] text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mb-4">Detoxification</p>
-                </Link>
-                <Link href="/services-all/#Varicose Ulcer">
-                  <p className="bg-[#38569c] text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mb-4">Varicose Ulcer</p>
-                </Link>
-                <Link href="/services-all/#Sciatica Pain">
-                  <p className="bg-[#38569c] text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mb-4">Sciatica Pain</p>
-                </Link>
-                <Link href="/services-all/#Cervical Spondylosis">
-                  <p className="bg-[#38569c] text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mb-4">Cervical Spondylosis</p>
-                </Link>
-                <Link href="/services-all/#Skin Treatments">
-                  <p className="bg-[#38569c] text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mb-4">Skin Treatments</p>
-                </Link>
-                <Link href="/services-all/#Cupping Therapy">
-                  <p className="bg-[#38569c] text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mb-4">Cupping Therapy</p>
-                </Link>
-                <Link href="/services-all/#Pain Management">
-                  <p className="bg-[#38569c] text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mb-4">Pain Management</p>
-                </Link>
-                <Link href="/services-all/#Post Partum Care">
-                  <p className="bg-[#38569c] text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mb-4">Post Partum Care</p>
-                </Link>
-              </div>
-            </div>
-          </div>
+          <button
+            data-drawer-target="default-sidebar"
+            data-drawer-toggle="default-sidebar"
+            aria-controls="default-sidebar"
+            type="button"
+            className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          >
+            <span className="sr-only">Open sidebar</span>
+            <svg
+              className="w-6 h-6"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clipRule="evenodd"
+                fillRule="evenodd"
+                d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+              />
+            </svg>
+          </button>
+          <aside
+      id="default-sidebar"
+      className="fixed left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+      aria-label="Sidebar"
+      style={{ top: `${sidebarTop}px` }}  // Dynamically setting the top value
+    >
+      <div className="h-full px-3 py-3 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+        <ul className="space-y-1 font-medium">
+          {links.map((link) => (
+            <li key={link.name}>
+              <Link
+                href={link.href}
+                onClick={() => handleLinkClick(link.name)} // Handle link click
+                className={`flex items-center p-2 rounded-lg dark:text-white group ${
+                  activeLink === link.name
+                    ? "bg-blue-500 text-white" // Active background color
+                    : "text-gray-900 hover:bg-gray-100 bg-gray-100 dark:hover:bg-gray-700" // Default state
+                }`}
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </aside>
 
-
-          <div className="">
+          <div className="ml-[15%] w-[80%] p-4">
             {/* Each card for a service */}
             <ServiceCard
               id="Tibetan Marma"
@@ -418,8 +449,8 @@ function ServiceCard({ id, title, description, imageUrl, benefits, packageOffers
 
         {/* Action Button */}
         <div className="mt-6">
-          <Link href="/Contact">
-            <button className="bg-[#222e8a] text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-blue-500 transition-colors mb-4">
+          <Link className='flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"' href="/Contact">
+            <button className="bg-[#222e8a] text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-blue-500 transition-colors mb-2">
               Learn More
             </button>
           </Link>
