@@ -27,7 +27,7 @@ const FAQ = () => {
                     } h-5 w-5 text-purple-500`}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-base text-black font-normal opacity-50">
+                <Disclosure.Panel className="px-4 pt-4 pb-2 text-xl text-black font-normal opacity-50">
                 We provide disease based treatments according to the conditions of the patient and also provide treatments for general body wellness.
                 </Disclosure.Panel>
               </>
@@ -47,7 +47,7 @@ const FAQ = () => {
                     } h-5 w-5 text-purple-500`}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-base text-black font-normal opacity-50">
+                <Disclosure.Panel className="px-4 pt-4 pb-2 text-xl text-black font-normal opacity-50">
                 Treatments plans vary according to patient’s disease condition,generally 5 days or 7 days or maximum 2 weeks.
                 </Disclosure.Panel>
               </>
@@ -67,7 +67,7 @@ const FAQ = () => {
                     } h-5 w-5 text-purple-500`}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-base text-black font-normal opacity-50">
+                <Disclosure.Panel className="px-4 pt-4 pb-2 text-xl text-black font-normal opacity-50">
                 Treatments plans vary according to patient’s disease condition,generally 5 days or 7 days or maximum 2 weeks.
                 </Disclosure.Panel>
               </>
@@ -87,7 +87,7 @@ const FAQ = () => {
                     } h-5 w-5 text-purple-500`}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-base text-black font-normal opacity-50">
+                <Disclosure.Panel className="px-4 pt-4 pb-2 text-xl text-black font-normal opacity-50">
                 Yes, accommodation is available.
                 </Disclosure.Panel>
               </>
@@ -107,7 +107,7 @@ const FAQ = () => {
                     } h-5 w-5 text-purple-500`}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-base text-black font-normal opacity-50">
+                <Disclosure.Panel className="px-4 pt-4 pb-2 text-xl text-black font-normal opacity-50">
                 ⁠Yes, we can arrange food facilities.Preferably light food mostly vegetarian food is offered to the patients.
                 </Disclosure.Panel>
               </>
@@ -127,7 +127,7 @@ const FAQ = () => {
                     } h-5 w-5 text-purple-500`}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-base text-black font-normal opacity-50">
+                <Disclosure.Panel className="px-4 pt-4 pb-2 text-xl text-black font-normal opacity-50">
                 Yes prior consultation is must to know more about patient’s bodily status.
                 </Disclosure.Panel>
               </>
@@ -147,7 +147,7 @@ const FAQ = () => {
                     } h-5 w-5 text-purple-500`}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-base text-black font-normal opacity-50">
+                <Disclosure.Panel className="px-4 pt-4 pb-2 text-xl text-black font-normal opacity-50">
                 Yes ,It will not affect the health status of the person besides it will help to reduce the risks.
                 </Disclosure.Panel>
               </>
@@ -167,7 +167,7 @@ const FAQ = () => {
                     } h-5 w-5 text-purple-500`}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-base text-black font-normal opacity-50">
+                <Disclosure.Panel className="px-4 pt-4 pb-2 text-xl text-black font-normal opacity-50">
                 The treatment we provide is completely based on classical ayurvedic texts hence there will be easy results of the treatments without any adverse effects and consequences.
                 </Disclosure.Panel>
               </>
@@ -187,7 +187,7 @@ const FAQ = () => {
                     } h-5 w-5 text-purple-500`}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-base text-black font-normal opacity-50">
+                <Disclosure.Panel className="px-4 pt-4 pb-2 text-xl text-black font-normal opacity-50">
                 ⁠Consult the clinic for the treatment.
                 </Disclosure.Panel>
               </>
@@ -207,7 +207,7 @@ const FAQ = () => {
                     } h-5 w-5 text-purple-500`}
                   />
                 </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-base text-black font-normal opacity-50">
+                <Disclosure.Panel className="px-4 pt-4 pb-2 text-xl text-black font-normal opacity-50">
                 Yes ,follow up appointment is must after taking treatment.
                 </Disclosure.Panel>
               </>
