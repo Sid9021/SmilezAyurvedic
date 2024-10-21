@@ -33,7 +33,7 @@ const Navbar = () => {
                   href="/"
                   className="text-2xl sm:text-4xl font-semibold text-black"
                 >
-                  <img src="/images/logo/logo.png" alt="" className="w-[350px]" />
+                  <img src="/images/logo/logo.png" alt="" className="md:w-[350px] w-[240px]" />
                 </Link>
               </div>
 
@@ -71,7 +71,7 @@ const Navbar = () => {
             </div>
 
             <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-              <Drawerdata />
+              <Drawerdata isOpen={isOpen} />
             </Drawer>
           </div>
         </div>

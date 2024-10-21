@@ -1,25 +1,29 @@
-import React from "react"
-import Link from "next/link"
+import React, { useState } from "react";
+import Link from "next/link";
+import Contactusform from "./Contactus";
 
 const navigation = [
-  { name: "About Us", href: "#aboutus-section", current: true },
-  { name: "Services", href: "#services-section", current: false },
-  { name: "FAQ", href: "#faq-section", current: false },
-  { name: "Blog", href: "#blog-section", current: false },
-  { name: "Testimonial", href: "#testimonial-section", current: false }
-]
+  { name: "Home", href: "", current: false },
+  { name: "Services", href: "/services-all", current: false },
+  { name: "Contact", href: "/Contact", current: false },
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ")
+  return classes.filter(Boolean).join(" ");
 }
 
-const Data = () => {
+const Data = ({isOpen}) => {
+  // State to control the visibility of the Contactusform
+  const [showForm, setShowForm] = useState(false);
+
+;
+
   return (
     <div className="rounded-md max-w-sm w-full mx-auto">
       <div className="flex-1 space-y-4 py-1">
         <div className="sm:block">
           <div className="space-y-1 px-5 pt-2 pb-3">
-            {navigation.map(item => (
+            {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -34,16 +38,14 @@ const Data = () => {
                 {item.name}
               </Link>
             ))}
-            <div className="mt-4"></div>
-            <button className="bg-navyblue w-full hover:text-white text-white border border-purple font-medium py-2 px-4 rounded">
-              Contact Us
-            </button>
-            {/* <Contactusform /> */}
+
+            {/* Book Now Button */}
+          <Contactusform isOpenForm={isOpen} />
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Data
+export default Data;

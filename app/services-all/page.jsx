@@ -106,7 +106,7 @@ export default function ServicesAll() {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold text-center my-10">Our Wellness Services</h1>
 
-          <button
+          {/* <button
             data-drawer-target="default-sidebar"
             data-drawer-toggle="default-sidebar"
             aria-controls="default-sidebar"
@@ -127,10 +127,10 @@ export default function ServicesAll() {
                 d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
               />
             </svg>
-          </button>
+          </button> */}
           <aside
       id="default-sidebar"
-      className="fixed left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+      className="fixed left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 hidden lg:block"
       aria-label="Sidebar"
       style={{ top: `${sidebarTop}px` }}  // Dynamically setting the top value
     >
@@ -155,7 +155,7 @@ export default function ServicesAll() {
       </div>
     </aside>
 
-          <div className="ml-[15%] w-[80%] p-4">
+          <div className="lg:ml-[15%] lg:w-[80%]: w-full p-4">
             {/* Each card for a service */}
             <ServiceCard
               id="Tibetan Marma"

@@ -21,9 +21,12 @@ const Drawer = ({ children, isOpen, setIsOpen }) => {
         <article className="relative w-340px max-w-lg pb-10 flex flex-col space-y-6 h-full">
           <header className="px-4 py-4 flex items-center">
             <div className="flex flex-shrink-0 items-center border-right">
-              <Link href="/" className="text-2xl font-semibold text-black">
-                Smilez Wellness Center
-              </Link>
+            <Link
+                  href="/"
+                  className="text-2xl sm:text-4xl font-semibold text-black"
+                >
+                  <img src="/images/logo/logo.png" alt="" className="md:w-[350px] w-[240px] mt-2" />
+                </Link>
             </div>
 
             <XMarkIcon

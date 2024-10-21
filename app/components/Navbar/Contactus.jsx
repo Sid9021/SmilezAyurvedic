@@ -4,7 +4,7 @@ import { Fragment, useState } from "react";
 import axios from 'axios';
 import Link from "next/link";
 
-const Contactusform = () => {
+const Contactusform = ({ isOpenForm }) => {
   let [isOpen, setIsOpen] = useState(false);
 
   const [inputValues, setInputValues] = useState({
@@ -77,12 +77,25 @@ const Contactusform = () => {
         <div className="hidden lg:block">
           <button
             type="button"
-            className="justify-end text-xl font-semibold bg-transparent py-4 px-6 lg:px-12 navbutton rounded-full hover:bg-navyblue hover:text-white"
+            className="justify-end text-xl w-full font-semibold bg-transparent py-4 px-6 lg:px-12 navbutton rounded-full hover:bg-navyblue hover:text-white"
+            onClick={openModal}
+          >
+            Book Now
+          </button>
+        </div>{
+          isOpenForm && (<>
+          <div className="block lg:hidden">
+          <button
+            type="button"
+            className="text-black hover:bg-gray-700 hover:text-purple block py-2 rounded-md text-base font-medium"
             onClick={openModal}
           >
             Book Now
           </button>
         </div>
+          </>)
+        }
+        
       </div>
 
       <Transition appear show={isOpen} as={Fragment}>
