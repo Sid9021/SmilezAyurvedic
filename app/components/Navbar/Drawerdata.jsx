@@ -40,7 +40,7 @@ const Data = ({isOpen}) => {
             ))}
 
             {/* Book Now Button */}
-          <Contactusform isOpenForm={isOpen} />
+          <Contactusform isOpenForm={isOpen} type="MenuMobile"/>
           </div>
         </div>
       </div>

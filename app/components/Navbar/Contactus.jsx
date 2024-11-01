@@ -4,7 +4,7 @@ import { Fragment, useState } from "react";
 import axios from 'axios';
 import Link from "next/link";
 
-const Contactusform = ({ isOpenForm }) => {
+const Contactusform = ({ isOpenForm, type }) => {
   let [isOpen, setIsOpen] = useState(false);
 
   const [inputValues, setInputValues] = useState({
@@ -74,7 +74,29 @@ const Contactusform = ({ isOpenForm }) => {
   return (
     <>
       <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto md:ml-6 sm:pr-0">
-        <div className="hidden lg:block">
+        {type === "Service" ? (<>
+          <div className="">
+          <button
+            type="button"
+            className="justify-end text-xl w-full font-semibold bg-transparent py-4 px-6 lg:px-12 navbutton rounded-full hover:bg-navyblue hover:text-white"
+            onClick={openModal}
+          >
+            Book an appointment
+          </button>
+        </div>
+        </>) : type === "MenuMobile" ? (<>
+          <div className="">
+          <button
+            type="button"
+            className="justify-end text-base w-full font-medium mt-3 "
+            onClick={openModal}
+          >
+            Book Now
+          </button>
+        </div>
+        
+        </>) : (<>
+          <div className="hidden lg:block">
           <button
             type="button"
             className="justify-end text-xl w-full font-semibold bg-transparent py-4 px-6 lg:px-12 navbutton rounded-full hover:bg-navyblue hover:text-white"
@@ -82,19 +104,11 @@ const Contactusform = ({ isOpenForm }) => {
           >
             Book Now
           </button>
-        </div>{
-          isOpenForm && (<>
-            <div className="block lg:hidden">
-              <button
-                type="button"
-                className="text-black hover:bg-gray-700 hover:text-purple block py-2 rounded-md text-base font-medium"
-                onClick={openModal}
-              >
-                Book Now
-              </button>
-            </div>
-          </>)
-        }
+        </div>
+
+        </>) }
+   
+   
 
       </div>
 

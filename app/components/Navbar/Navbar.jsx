@@ -24,7 +24,7 @@ const Navbar = () => {
     <Disclosure as="nav" className="navbar">
       <>
         <div className="p-3 md:p-4 lg:px-8">
-          <div className="relative flex h-12 sm:h-20 items-center justify-between">
+          <div className="relative flex h-12 sm:h-20 items-center justify-between overflow-hidden">
             <div className="flex flex-1 items-center justify-between">
               {/* LOGO */}
 

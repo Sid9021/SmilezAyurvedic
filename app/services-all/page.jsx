@@ -6,6 +6,7 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Navbar from "../components/Navbar/index"
 import Footer from "../components/Footer/index"
+import Contactusform from '../components/Navbar/Contactus';
 
 export default function ServicesAll() {
 
@@ -104,7 +105,7 @@ export default function ServicesAll() {
       <Navbar />
       <div className='relative'>
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-center my-10">Our Wellness Services</h1>
+          <h1 className="text-4xl font-bold text-center mt-8">Our Wellness Services</h1>
 
           {/* <button
             data-drawer-target="default-sidebar"
@@ -129,31 +130,30 @@ export default function ServicesAll() {
             </svg>
           </button> */}
           <aside
-      id="default-sidebar"
-      className="fixed left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 hidden lg:block"
-      aria-label="Sidebar"
-      style={{ top: `${sidebarTop}px` }}  // Dynamically setting the top value
-    >
-      <div className="h-full px-3 py-3 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-        <ul className="space-y-1 font-medium">
-          {links.map((link) => (
-            <li key={link.name}>
-              <Link
-                href={link.href}
-                onClick={() => handleLinkClick(link.name)} // Handle link click
-                className={`flex items-center p-2 rounded-lg dark:text-white group ${
-                  activeLink === link.name
-                    ? "bg-blue-500 text-white" // Active background color
-                    : "text-gray-900 hover:bg-gray-100 bg-gray-100 dark:hover:bg-gray-700" // Default state
-                }`}
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </aside>
+            id="default-sidebar"
+            className="fixed left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 hidden lg:block"
+            aria-label="Sidebar"
+            style={{ top: `${sidebarTop}px` }}  // Dynamically setting the top value
+          >
+            <div className="h-full px-3 py-3 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+              <ul className="space-y-1 font-medium">
+                {links.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      onClick={() => handleLinkClick(link.name)} // Handle link click
+                      className={`flex items-center p-2 rounded-lg dark:text-white group ${activeLink === link.name
+                          ? "bg-blue-500 text-white" // Active background color
+                          : "text-gray-900 hover:bg-gray-100 bg-gray-100 dark:hover:bg-gray-700" // Default state
+                        }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </aside>
 
           <div className="lg:ml-[15%] lg:w-[80%]: w-full p-4">
             {/* Each card for a service */}
@@ -259,150 +259,155 @@ export default function ServicesAll() {
               ]}
               imageUrl="/images/services/Weight Reduction.jpeg"
             />
-            <ServiceCard
-              id="Detoxification"
-              title="Detoxification"
-              description="A natural cleansing process that removes toxins from your body, enhancing energy levels and promoting overall health."
-              benefits={[
-                'Flushes out toxins',
-                'Improves digestion',
-                'Boosts energy and clarity',
-              ]}
-              packageOffers={[
-                'Enema + Booster Juice',
-                'Liver Pack',
-                'Cupping Therapy',
-              ]}
-              imageUrl="/images/services/Detox.jpg"
-            />
-            <ServiceCard
-              id="Varicose Ulcer"
-              title="Varicose Ulcer"
-              description="A treatment for varicose veins and associated ulcers using natural remedies and lifestyle changes."
-              benefits={[
-                'Reduces swelling and discomfort',
-                'Promotes healing of ulcers',
-                'Prevents further varicose vein damage',
-              ]}
-              packageOffers={[
-                'Wound Cleaning',
-                'Triphala Wash',
-                'Lepam',
-                'Bandage',
-              ]}
-              imageUrl="/images/services/Varicose.jpg"
-            />
-            <ServiceCard
-              id="Sciatica Pain"
-              title="Sciatica Pain (Low Backbone)"
-              description="Sciatica is a condition that causes pain along the sciatic nerve, which runs from the lower back down through the legs. Our treatments focus on reducing pain and inflammation."
-              benefits={[
-                'Reduces lower back pain',
-                'Alleviates pain in legs and feet',
-                'Improves posture and mobility',
-              ]}
-              packageOffers={[
-                'Abhyangam',
-                'Elakizhi',
-                'Dhanyamla Dhara',
-                'Kati Vasthi',
-                'Lepanam',
-              ]}
-              imageUrl="/images/services/Back Pain.jpg"
-            />
 
-            <ServiceCard
-              id="Cervical Spondylosis"
-              title="Cervical Spondylosis"
-              description="A degenerative condition that affects the cervical spine (neck region). Our treatments are designed to relieve pain, stiffness, and other symptoms caused by cervical spondylosis."
-              benefits={[
-                'Reduces neck pain and stiffness',
-                'Improves flexibility and range of motion',
-                'Decreases inflammation and discomfort',
-              ]}
-              packageOffers={[
-                'Spine Lepanam',
-                'Pizhichil',
-                'Jreeva Vasti',
-                'Naragakizhi',
-                'Bone Setting',
-              ]}
-              imageUrl="/images/services/Cervical.jpg"
-            />
-            <ServiceCard
-              id="Skin Treatments"
-              title="Skin Treatments"
-              description="Our skin treatments are personalized to meet your specific skin needs. From acne to anti-aging, our services ensure you leave with healthier and radiant skin."
-              benefits={[
-                'Improves skin tone and texture',
-                'Reduces signs of aging and acne',
-                'Brightens and detoxifies the skin',
-              ]}
-              packageOffers={[
-                'Pimple and Acne Treatment',
-                'Anti-Aging Treatment',
-                'De Tan',
-                'Brightening',
-                'Facials for healthy skin',
-              ]}
-              imageUrl="/images/services/Skin Treatment.jpg"
-            />
-            <ServiceCard
-              id="Cupping Therapy"
-              title="Cupping Therapy"
-              description="A traditional therapy using suction to promote blood circulation, detoxification, and pain relief."
-              benefits={[
-                'Promotes detoxification',
-                'Increases blood flow',
-                'Relieves muscle tension',
-              ]}
-              packageOffers={[
-                'Dry Cupping',
-                'Wet Cupping',
-                'Facial Cupping',
-                'Oil Cupping',
-                'Fire Cupping',
-              ]}
-              imageUrl="/images/services/Cupping.webp"
-            />
-            <ServiceCard
-              id="Pain Management"
-              title="Pain Management"
-              description="Our pain management therapy offers relief from chronic pain using natural and therapeutic methods."
-              benefits={[
-                'Relieves chronic pain',
-                'Improves joint mobility',
-                'Enhances quality of life',
-              ]}
-              packageOffers={[
-                'Abhyangam + Steam Bath',
-                'Podi Kizhi',
-                'Elakizhi',
-                'Dhanyamla Dhara',
-                'Lepanam',
-              ]}
-              imageUrl="/images/services/Pain Management.png"
-            />
-            <ServiceCard
-              id="Post Partum Care"
-              title="Post Partum Care"
-              description="A comprehensive package that creates a nurturing environment to support new mothers physically and emotionally."
-              benefits={[
-                'Supports physical recovery',
-                'Boosts energy and mood',
-                'Helps with lactation and hormone balance',
-              ]}
-              packageOffers={[
-                'Customized nutrition plan',
-                'Herbal support',
-                'Relaxation therapies',
-              ]}
-              imageUrl="/images/services/Post Partum.jpg"
-            />
+            <div className='hidden lg:block'>
+              <ServiceCard
+                id="Detoxification"
+                title="Detoxification"
+                description="A natural cleansing process that removes toxins from your body, enhancing energy levels and promoting overall health."
+                benefits={[
+                  'Flushes out toxins',
+                  'Improves digestion',
+                  'Boosts energy and clarity',
+                ]}
+                packageOffers={[
+                  'Enema + Booster Juice',
+                  'Liver Pack',
+                  'Cupping Therapy',
+                ]}
+                imageUrl="/images/services/Detox.jpg"
+              />
+              <ServiceCard
+                id="Varicose Ulcer"
+                title="Varicose Ulcer"
+                description="A treatment for varicose veins and associated ulcers using natural remedies and lifestyle changes."
+                benefits={[
+                  'Reduces swelling and discomfort',
+                  'Promotes healing of ulcers',
+                  'Prevents further varicose vein damage',
+                ]}
+                packageOffers={[
+                  'Wound Cleaning',
+                  'Triphala Wash',
+                  'Lepam',
+                  'Bandage',
+                ]}
+                imageUrl="/images/services/Varicose.jpg"
+              />
+              <ServiceCard
+                id="Sciatica Pain"
+                title="Sciatica Pain (Low Backbone)"
+                description="Sciatica is a condition that causes pain along the sciatic nerve, which runs from the lower back down through the legs. Our treatments focus on reducing pain and inflammation."
+                benefits={[
+                  'Reduces lower back pain',
+                  'Alleviates pain in legs and feet',
+                  'Improves posture and mobility',
+                ]}
+                packageOffers={[
+                  'Abhyangam',
+                  'Elakizhi',
+                  'Dhanyamla Dhara',
+                  'Kati Vasthi',
+                  'Lepanam',
+                ]}
+                imageUrl="/images/services/Back Pain.jpg"
+              />
+
+              <ServiceCard
+                id="Cervical Spondylosis"
+                title="Cervical Spondylosis"
+                description="A degenerative condition that affects the cervical spine (neck region). Our treatments are designed to relieve pain, stiffness, and other symptoms caused by cervical spondylosis."
+                benefits={[
+                  'Reduces neck pain and stiffness',
+                  'Improves flexibility and range of motion',
+                  'Decreases inflammation and discomfort',
+                ]}
+                packageOffers={[
+                  'Spine Lepanam',
+                  'Pizhichil',
+                  'Jreeva Vasti',
+                  'Naragakizhi',
+                  'Bone Setting',
+                ]}
+                imageUrl="/images/services/Cervical.jpg"
+              />
+              <ServiceCard
+                id="Skin Treatments"
+                title="Skin Treatments"
+                description="Our skin treatments are personalized to meet your specific skin needs. From acne to anti-aging, our services ensure you leave with healthier and radiant skin."
+                benefits={[
+                  'Improves skin tone and texture',
+                  'Reduces signs of aging and acne',
+                  'Brightens and detoxifies the skin',
+                ]}
+                packageOffers={[
+                  'Pimple and Acne Treatment',
+                  'Anti-Aging Treatment',
+                  'De Tan',
+                  'Brightening',
+                  'Facials for healthy skin',
+                ]}
+                imageUrl="/images/services/Skin Treatment.jpg"
+              />
+              <ServiceCard
+                id="Cupping Therapy"
+                title="Cupping Therapy"
+                description="A traditional therapy using suction to promote blood circulation, detoxification, and pain relief."
+                benefits={[
+                  'Promotes detoxification',
+                  'Increases blood flow',
+                  'Relieves muscle tension',
+                ]}
+                packageOffers={[
+                  'Dry Cupping',
+                  'Wet Cupping',
+                  'Facial Cupping',
+                  'Oil Cupping',
+                  'Fire Cupping',
+                ]}
+                imageUrl="/images/services/Cupping.webp"
+              />
+              <ServiceCard
+                id="Pain Management"
+                title="Pain Management"
+                description="Our pain management therapy offers relief from chronic pain using natural and therapeutic methods."
+                benefits={[
+                  'Relieves chronic pain',
+                  'Improves joint mobility',
+                  'Enhances quality of life',
+                ]}
+                packageOffers={[
+                  'Abhyangam + Steam Bath',
+                  'Podi Kizhi',
+                  'Elakizhi',
+                  'Dhanyamla Dhara',
+                  'Lepanam',
+                ]}
+                imageUrl="/images/services/Pain Management.png"
+              />
+              <ServiceCard
+                id="Post Partum Care"
+                title="Post Partum Care"
+                description="A comprehensive package that creates a nurturing environment to support new mothers physically and emotionally."
+                benefits={[
+                  'Supports physical recovery',
+                  'Boosts energy and mood',
+                  'Helps with lactation and hormone balance',
+                ]}
+                packageOffers={[
+                  'Customized nutrition plan',
+                  'Herbal support',
+                  'Relaxation therapies',
+                ]}
+                imageUrl="/images/services/Post Partum.jpg"
+              />
+            </div>
+
             {/* Add more cards as needed */}
           </div>
         </div>
       </div>
+      <Footer/>
 
 
     </>
@@ -411,7 +416,7 @@ export default function ServicesAll() {
 
 function ServiceCard({ id, title, description, imageUrl, benefits, packageOffers }) {
   return (
-    <div id={id} className="shadow-lg rounded-xl overflow-hidden w-full flex flex-col lg:flex-row bg-gradient-to-br from-[#8a8aec] to-white hover:shadow-2xl transition-shadow duration-300 mt-12">
+    <div id={id} className="shadow-lg rounded-xl overflow-hidden w-full border-grey border-2 flex flex-col lg:flex-row bg-gradient-to-br from-[#8a8aec] to-white hover:shadow-2xl transition-shadow duration-300 mt-12">
       {/* Image Section */}
       <div className="lg:w-[30%] w-full h-60 lg:h-auto overflow-hidden relative">
         <Image src={imageUrl} alt={title} layout="fill" objectFit="cover" className="rounded-t-xl lg:rounded-t-none lg:rounded-l-xl" />
@@ -449,11 +454,7 @@ function ServiceCard({ id, title, description, imageUrl, benefits, packageOffers
 
         {/* Action Button */}
         <div className="mt-6">
-          <Link className='flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"' href="/Contact">
-            <button className="bg-[#222e8a] text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-blue-500 transition-colors mb-2">
-              Learn More
-            </button>
-          </Link>
+          <Contactusform type="Service" />
         </div>
       </div>
     </div>

@@ -28,8 +28,8 @@ const Aboutdata = [
 
 const Aboutus = () => {
   return (
-    <section id="aboutus-section" className="relative bg-lightgrey py-24 my-16 rounded-3xl overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-teal-500 to-blue-600 opacity-30 z-0"></div>
+    <section id="aboutus-section" className="relative bg-lightgrey py-12 lg:py-16 my-16 rounded-3xl lg:overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-teal-500 to-blue-600 opacity-30 z-0 h-[65vh] lg:h-auto"></div>
       <div className="relative mx-auto max-w-7xl px-4 lg:px-10 ">
         <Image
           src="/images/aboutus/dots.svg"
@@ -42,7 +42,7 @@ const Aboutus = () => {
           <h3 className="text-lg tracking-widest text-center lg:text-right text-blue font-semibold">
             ABOUT US
           </h3>
-          <h4 className="text-4xl lg:text-6xl font-bold text-center lg:text-right text-darkblue leading-tight">
+          <h4 className="text-4xl lg:text-6xl font-bold text-center lg:text-right text-darkblue leading-tight mb-5">
             Know more about us.
           </h4>
         </div>

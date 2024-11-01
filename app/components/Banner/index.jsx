@@ -1,27 +1,39 @@
-import Image from "next/image"
+import Image from "next/image";
+import Contactusform from "../Navbar/Contactus";
+import Link from "next/link";
 
 const Banner = () => {
   return (
-    <div className="mx-auto max-w-7xl my-10 sm:py-10 px-6 lg:px-8">
-      <div className="flex justify-around">
+    <div className="lg:mx-auto lg:max-w-8xl lg:my-10 sm:py-10 lg:py-8 lg:h-screen">
+      <div className="flex lg:mt-12 -mt-6 relative lg:justify-around mx-auto">
+
         {/* COLUMN-1 */}
 
-        <div id="#home-page" className="mx-auto sm:mx-0">
+        <div id="#home-page" className="absolute top-[20%] left-[5%] lg:relative z-[1] mx-auto lg:-mx-20 ">
           <div className="py-3 text-center lg:text-start">
             <button className="text-blue bg-lightblue hover:shadow-xl text-sm md:text-lg font-bold px-6 py-1 rounded-3xl tracking-wider hover:text-white hover:bg-black">
               AYURVEDIC EXCELLENCE
             </button>
           </div>
-          <div className="py-3 text-center lg:text-start">
-            <h1 className="text-6xl lg:text-80xl font-bold text-darkpurple">
-              Dedicated to <br /> bring your <br /> ideas to life.
+          <div className="py-3 text-center lg:text-start ">
+            <h1 className="text-6xl lg:text-80xl font-bold text-white lg:text-black">
+              Revitalize your mind<br/> and body.
             </h1>
+
           </div>
-          <div className="my-7 text-center lg:text-start">
-            <button className="text-sm md:text-xl font-semibold hover:shadow-xl bg-blue text-white py-3 px-6 md:py-5 md:px-14 rounded-full hover:bg-hoblue">
-              Get Started
-            </button>
+          <div className="py-3 text-center lg:text-start ">
+            <Link href="/Booking">
+              <button
+                type="button"
+                className="justify-end text-xl font-semibold bg-white py-4 px-6 text-black border-1 border-black lg:px-12 navbutton rounded-full hover:bg-navyblue hover:text-white"
+
+              >
+                Book Now
+              </button>
+            </Link>
+
           </div>
+
         </div>
 
         {/* COLUMN-2 */}
@@ -30,13 +42,24 @@ const Banner = () => {
           <Image
             src="/images/banner/Spa.png"
             alt="hero-image"
-            width={500}
-            height={500}
+            width={450}
+            height={450}
+          />
+        </div>
+
+        {/* MOBILE VIDEO */}
+        <div className="block md:hidden mt-6 bg-black w-full h-full relative">
+          <video
+            src="/videos/hero_mobile.mp4"
+            autoPlay
+            loop
+            muted
+            className="w-full opacity-50"
           />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Banner
+export default Banner;

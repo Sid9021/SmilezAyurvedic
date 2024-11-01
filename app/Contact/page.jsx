@@ -4,6 +4,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import { useState } from 'react';
 import axios from 'axios';
 import Navbar from '../components/Navbar/Navbar';
+import Footer from '../components/Footer';
 
 
 export default function ContactPage() {
@@ -50,9 +51,9 @@ export default function ContactPage() {
     <div>
       <Navbar/>
       {/* Banner Section */}
-      <div className="relative top-[50px] h-[60vh] w-full">
+      <div className="relative top-[50px] lg:h-[60vh] h-[40vh] w-full">
         <div className="absolute inset-0  bg-gradient-to-r from-[#81df83] via-[#27ab4c] to-[#0e9014] flex items-center justify-center">
-          <h1 className="text-5xl font-bold text-white drop-shadow-md">
+          <h1 className="text-5xl font-bold text-white drop-shadow-md w-[300px] lg:w-auto">
             Get In Touch With Us
           </h1>
         </div>
@@ -185,6 +186,7 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
