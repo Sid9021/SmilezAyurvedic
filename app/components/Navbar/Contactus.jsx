@@ -76,39 +76,50 @@ const Contactusform = ({ isOpenForm, type }) => {
       <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto md:ml-6 sm:pr-0">
         {type === "Service" ? (<>
           <div className="">
-          <button
-            type="button"
-            className="justify-end text-xl w-full font-semibold bg-transparent py-4 px-6 lg:px-12 navbutton rounded-full hover:bg-navyblue hover:text-white"
-            onClick={openModal}
-          >
-            Book an appointment
-          </button>
-        </div>
+            <button
+              type="button"
+              className="justify-end text-xl w-full font-semibold bg-transparent py-4 px-6 lg:px-12 navbutton rounded-full hover:bg-navyblue hover:text-white"
+              onClick={openModal}
+            >
+              Book an appointment
+            </button>
+          </div>
         </>) : type === "MenuMobile" ? (<>
           <div className="">
-          <button
-            type="button"
-            className="justify-end text-base w-full font-medium mt-3 "
-            onClick={openModal}
-          >
-            Book Now
-          </button>
-        </div>
-        
+            <button
+              type="button"
+              className="justify-end text-base w-full font-medium mt-3 "
+              onClick={openModal}
+            >
+              Book Now
+            </button>
+          </div>
+
+        </>) : type === "Banner" ? (<>
+          <div className="flex justify-center items-center ml-[29%] lg:-ml-5">
+            <button
+              type="button"
+              className="text-xl font-semibold bg-white py-4 px-6 text-black border border-black lg:px-12 navbutton rounded-full hover:bg-navyblue hover:text-white"
+              onClick={openModal}
+            >
+              Book Now
+            </button>
+          </div>
+
         </>) : (<>
           <div className="hidden lg:block">
-          <button
-            type="button"
-            className="justify-end text-xl w-full font-semibold bg-transparent py-4 px-6 lg:px-12 navbutton rounded-full hover:bg-navyblue hover:text-white"
-            onClick={openModal}
-          >
-            Book Now
-          </button>
-        </div>
+            <button
+              type="button"
+              className="justify-end text-xl w-full font-semibold bg-transparent py-4 px-6 lg:px-12 navbutton rounded-full hover:bg-navyblue hover:text-white"
+              onClick={openModal}
+            >
+              Book Now
+            </button>
+          </div>
 
-        </>) }
-   
-   
+        </>)}
+
+
 
       </div>
 

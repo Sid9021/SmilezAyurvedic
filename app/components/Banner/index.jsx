@@ -5,7 +5,7 @@ import Link from "next/link";
 const Banner = () => {
   return (
     <div className="lg:mx-auto lg:max-w-8xl lg:my-10 sm:py-10 lg:py-8 lg:h-screen">
-      <div className="flex lg:mt-12 -mt-6 relative lg:justify-around mx-auto">
+      <div className="flex lg:mt-12 justify-center items-center -mt-6 relative lg:justify-around mx-auto">
 
         {/* COLUMN-1 */}
 
@@ -22,15 +22,8 @@ const Banner = () => {
 
           </div>
           <div className="py-3 text-center lg:text-start ">
-            <Link href="/Booking">
-              <button
-                type="button"
-                className="justify-end text-xl font-semibold bg-white py-4 px-6 text-black border-1 border-black lg:px-12 navbutton rounded-full hover:bg-navyblue hover:text-white"
-
-              >
-                Book Now
-              </button>
-            </Link>
+            <Contactusform type="Banner"/>
+     
 
           </div>
 
