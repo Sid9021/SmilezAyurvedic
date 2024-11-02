@@ -20,7 +20,7 @@ const FAQ = () => {
             {({ open }) => (
               <>
                 <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-2 text-left lg:text-2xl text-lg font-medium">
-                  <span className="max-w-[255px] lg:max-w-none">What types of Ayurvedic treatments do you offer at Smilez Wellness Centre</span>
+                  <span className="w-[350px] lg:max-w-none">What types of Ayurvedic treatments do you offer at Smilez Wellness Centre</span>
                   <ChevronUpIcon
                     className={`${
                       open ? "rotate-180 transform" : ""
@@ -40,7 +40,7 @@ const FAQ = () => {
             {({ open }) => (
               <>
                 <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-2 text-left lg:text-2xl text-lg font-medium">
-                  <span className="max-w-[255px] lg:max-w-none">Do you provide customized treatment plans based on individual health conditions?</span>
+                  <span className="w-[350px] lg:max-w-none">Do you provide customized treatment plans based on individual health conditions?</span>
                   <ChevronUpIcon
                     className={`${
                       open ? "rotate-180 transform" : ""
@@ -60,7 +60,7 @@ const FAQ = () => {
             {({ open }) => (
               <>
                 <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-2 text-left lg:text-2xl text-lg font-medium">
-                  <span className="max-w-[255px] lg:max-w-none">How long do Ayurvedic treatments typically last?</span>
+                  <span className="w-[350px] lg:max-w-none">How long do Ayurvedic treatments typically last?</span>
                   <ChevronUpIcon
                     className={`${
                       open ? "rotate-180 transform" : ""
@@ -80,7 +80,7 @@ const FAQ = () => {
             {({ open }) => (
               <>
                 <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-2 text-left lg:text-2xl text-lg font-medium">
-                  <span className="max-w-[255px] lg:max-w-none">Can I stay at the clinic during my treatment? What accommodations are provided?</span>
+                  <span className="w-[350px] lg:max-w-none">Can I stay at the clinic during my treatment? What accommodations are provided?</span>
                   <ChevronUpIcon
                     className={`${
                       open ? "rotate-180 transform" : ""
@@ -100,7 +100,7 @@ const FAQ = () => {
             {({ open }) => (
               <>
                 <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-2 text-left lg:text-2xl text-lg font-medium">
-                  <span className="max-w-[255px] lg:max-w-none">Is food included during my stay? Do you offer Ayurvedic meals?</span>
+                  <span className="w-[350px] lg:max-w-none">Is food included during my stay? Do you offer Ayurvedic meals?</span>
                   <ChevronUpIcon
                     className={`${
                       open ? "rotate-180 transform" : ""
@@ -120,7 +120,7 @@ const FAQ = () => {
             {({ open }) => (
               <>
                 <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-2 text-left lg:text-2xl text-lg font-medium">
-                  <span className="max-w-[255px] lg:max-w-none">Do I need a prior consultation before starting treatment?</span>
+                  <span className="w-[350px] lg:max-w-none">Do I need a prior consultation before starting treatment?</span>
                   <ChevronUpIcon
                     className={`${
                       open ? "rotate-180 transform" : ""
@@ -140,7 +140,7 @@ const FAQ = () => {
             {({ open }) => (
               <>
                 <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-2 text-left lg:text-2xl text-lg font-medium">
-                  <span className="max-w-[255px] lg:max-w-none">Are the treatments safe for people with pre-existing health conditions?</span>
+                  <span className="w-[350px] lg:max-w-none">Are the treatments safe for people with pre-existing health conditions?</span>
                   <ChevronUpIcon
                     className={`${
                       open ? "rotate-180 transform" : ""
@@ -160,7 +160,7 @@ const FAQ = () => {
             {({ open }) => (
               <>
                 <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-2 text-left lg:text-2xl text-lg font-medium">
-                  <span className="max-w-[255px] lg:max-w-none">How do Ayurvedic treatments at Smilez Wellness Centre differ from conventional medical treatments?</span>
+                  <span className="w-[350px] lg:max-w-none">How do Ayurvedic treatments at Smilez Wellness Centre differ from conventional medical treatments?</span>
                   <ChevronUpIcon
                     className={`${
                       open ? "rotate-180 transform" : ""
@@ -180,7 +180,7 @@ const FAQ = () => {
             {({ open }) => (
               <>
                 <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-2 text-left lg:text-2xl text-lg font-medium">
-                  <span className="max-w-[255px] lg:max-w-none">How can I schedule a treatment at Smilez Wellness Centre?</span>
+                  <span className="w-[350px] lg:max-w-none">How can I schedule a treatment at Smilez Wellness Centre?</span>
                   <ChevronUpIcon
                     className={`${
                       open ? "rotate-180 transform" : ""
@@ -200,7 +200,7 @@ const FAQ = () => {
             {({ open }) => (
               <>
                 <Disclosure.Button className="flex w-full justify-between rounded-lg px-4 py-2 text-left lg:text-2xl text-lg font-medium">
-                  <span className="max-w-[255px] lg:max-w-none">Can I schedule a follow-up consultation after completing my treatment?</span>
+                  <span className="w-[350px] lg:max-w-none">Can I schedule a follow-up consultation after completing my treatment?</span>
                   <ChevronUpIcon
                     className={`${
                       open ? "rotate-180 transform" : ""
