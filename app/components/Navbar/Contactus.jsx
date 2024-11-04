@@ -164,7 +164,7 @@ const Contactusform = ({ isOpenForm, type }) => {
                       <img src="/images/logo/logo.png" alt="" className="w-[350px]" />
                     </div>
                     <p className="mb-8 lg:mb-16 mt-8 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
-                      Contact us now? Want to send us a feedback?
+                    Book your appointment today to start your wellness journey!
                     </p>
 
                     <div className="space-y-8">
