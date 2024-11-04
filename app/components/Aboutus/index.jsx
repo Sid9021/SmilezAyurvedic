@@ -84,7 +84,7 @@ const Aboutus = () => {
             height={480}
             className="absolute top-[70px] hidden lg:block left-0 rounded transform scale-110"
           />
-          <div className="relative bg-white p-8 rounded-3xl shadow-xl max-w-2xl lg:ml-auto mx-auto">
+          <div className="relative bg-white p-8 rounded-3xl shadow-xl max-w-2xl ml-auto justify-center">
             <h3 className="text-2xl font-medium text-darkblue mb-4 text-center lg:text-left">
               Smilez Ayurveda: A Sanctuary of Wellness
             </h3>

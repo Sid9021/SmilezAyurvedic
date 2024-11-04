@@ -429,7 +429,7 @@ export default function ServicesAll() {
 
 function ServiceCard({ id, title, description, imageUrl, benefits, packageOffers }) {
   return (
-    <div id={id} className="shadow-lg rounded-xl overflow-hidden w-full border-grey border-2 flex flex-col lg:flex-row bg-gradient-to-br from-[#8a8aec] to-white hover:shadow-2xl transition-shadow duration-300 mt-12">
+    <div id={id} className="shadow-lg rounded-xl overflow-hidden w-[90vw] border-grey border-2 flex flex-col lg:flex-row bg-gradient-to-br from-[#8a8aec] to-white hover:shadow-2xl transition-shadow duration-300 mt-12">
       {/* Image Section */}
       <div className="lg:w-[30%] w-full h-60 lg:h-auto overflow-hidden relative">
         <Image src={imageUrl} alt={title} layout="fill" objectFit="cover" className="rounded-t-xl lg:rounded-t-none lg:rounded-l-xl" />
