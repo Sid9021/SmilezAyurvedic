@@ -5,7 +5,7 @@ const products = [
   {
     id: 1,
     section: "Menu",
-    link: ["Home", "About", "Services", "Contact"]
+    link: ["Home", "Services", "Contact"]
   },
   // Additional sections can be added here
 ]
@@ -18,11 +18,11 @@ const footer = () => {
           {/* COLUMN-1 */}
           <div className="col-span-4">
             <h3 className="text-white text-4xl font-semibold leading-9 mb-4 lg:mb-20">
-              Smilez Wellness Center
+              Smilez Wellness Centre
             </h3>
             <div className="flex gap-4 mb-6">
               <div className="footer-icons">
-                <Link href="https://facebook.com">
+                <Link href="https://www.facebook.com/profile.php?id=61558441632426">
                   <Image
                     src={"/images/footer/vec.svg"}
                     alt="facebook"
@@ -32,17 +32,7 @@ const footer = () => {
                 </Link>
               </div>
               <div className="footer-icons">
-                <Link href="https://twitter.com">
-                  <Image
-                    src={"/images/footer/twitter.svg"}
-                    alt="twitter"
-                    width={20}
-                    height={20}
-                  />
-                </Link>
-              </div>
-              <div className="footer-icons">
-                <Link href="https://instagram.com">
+                <Link href="https://www.instagram.com/smilezawc?igsh=cW8xODk2azI2bDR4">
                   <Image
                     src={"/images/footer/instagram.svg"}
                     alt="instagram"
@@ -80,17 +70,12 @@ const footer = () => {
             </h3>
             <ul className="text-white">
               <li className="mb-5">
-                <Link href="https://facebook.com" className="text-xl font-normal">
+                <Link href="https://www.facebook.com/profile.php?id=61558441632426" className="text-xl font-normal">
                   Facebook
                 </Link>
               </li>
               <li className="mb-5">
-                <Link href="https://twitter.com" className="text-xl font-normal">
-                  Twitter
-                </Link>
-              </li>
-              <li className="mb-5">
-                <Link href="https://instagram.com" className="text-xl font-normal">
+                <Link href="https://www.instagram.com/smilezawc?igsh=cW8xODk2azI2bDR4" className="text-xl font-normal">
                   Instagram
                 </Link>
               </li>
@@ -103,7 +88,7 @@ const footer = () => {
               Our Address
             </h3>
             <p className="text-white text-2xl">
-              Smilez Ayurvedic Wellness Center<br />
+              Smilez Ayurvedic Wellness Centre<br />
               New Lane Road, Near Asset Periyar Scape<br />
               Thottakkattukara, Aluva,
               Kerala 683108
@@ -120,7 +105,7 @@ const footer = () => {
               <h3 className="text-center md:text-start text-offwhite text-xl">
                 @2024 - All Rights Reserved by{" "}
                 <Link href="#" target="_blank">
-                  Smilez Wellness Center
+                  Smilez Wellness Centre
                 </Link>
               </h3>
             </div>

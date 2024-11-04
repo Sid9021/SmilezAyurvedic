@@ -28,8 +28,8 @@ const Aboutdata = [
 
 const Aboutus = () => {
   return (
-    <section id="aboutus-section" className="relative bg-lightgrey py-12 lg:py-16 my-16 rounded-3xl lg:overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-teal-500 to-blue-600 opacity-30 z-0 h-[65vh] lg:h-auto"></div>
+    <section id="aboutus-section" className="relative bg-lightgrey py-12 lg:py-16 my-16 mx-3 md:mx-0 rounded-3xl md:rounded-none lg:overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r rounded-2xl md:rounded-none from-green-400 via-teal-500 to-blue-600 opacity-30 z-0 h-full md:h-auto lg:h-auto"></div>
       <div className="relative mx-auto max-w-7xl px-4 lg:px-10 ">
         <Image
           src="/images/aboutus/dots.svg"
@@ -84,7 +84,7 @@ const Aboutus = () => {
             height={480}
             className="absolute top-[70px] hidden lg:block left-0 rounded transform scale-110"
           />
-          <div className="relative bg-white p-8 rounded-3xl shadow-xl max-w-2xl ml-auto">
+          <div className="relative bg-white p-8 rounded-3xl shadow-xl max-w-2xl mx-auto">
             <h3 className="text-2xl font-medium text-darkblue mb-4 text-center lg:text-left">
               Smilez Ayurveda: A Sanctuary of Wellness
             </h3>

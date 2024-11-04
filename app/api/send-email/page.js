@@ -11,13 +11,13 @@ export default async function sendEmail(req, res) {
 
   console.log("new params", name, email, text)
 
-  const modifiedPdfPath = await modifyPDF(name, email);
-  const absolutePdfPath = path.resolve('public', `${name}.pdf`);
-  console.log('PDF Path:', absolutePdfPath);
+  // const modifiedPdfPath = await modifyPDF(name, email);
+  // const absolutePdfPath = path.resolve('public', `${name}.pdf`);
+  // console.log('PDF Path:', absolutePdfPath);
 
-  // // Read the PDF file
-  const fileBuffer = fs.readFileSync(absolutePdfPath);
-  // Create a reusable transporter object using SMTP transport
+  // // // Read the PDF file
+  // const fileBuffer = fs.readFileSync(absolutePdfPath);
+  // // Create a reusable transporter object using SMTP transport
 
  
   const transporter = nodemailer.createTransport({
@@ -35,28 +35,28 @@ export default async function sendEmail(req, res) {
     from: 'smilezayurvedicwellness@gmail.com',           // Sender address
     to: ['smilezayurvedicwellness@gmail.com'],          // List of recipients
     subject: `Customer Booking : ${name}`,     // Subject line
-    text: `Hi,\nCustomer Message: ${text} \nPlease find the attached PDF file.`, // Plain text body
-    attachments: [
-      {
-        filename: `${name}.pdf`,
-        content: fileBuffer,
-        contentType: 'application/pdf'
-      }
-    ]
+    text: `Hi,\nMessage: ${text} \nContact email: ${email}.`, // Plain text body
+    // attachments: [
+    //   {
+    //     filename: `${name}.pdf`,
+    //     content: fileBuffer,
+    //     contentType: 'application/pdf'
+    //   }
+    // ]
   };
 
   const clientOptions = {
     from: 'smilezayurvedicwellness@gmail.com',           // Sender address
     to: [email],          // List of recipients
-    subject: 'Your Booking has been received',     // Subject line
-    text: 'Hello!\nPlease find the attached PDF file.', // Plain text body
-    attachments: [
-      {
-        filename: `${name}.pdf`,
-        content: fileBuffer, // Directly use fileBuffer        
-        contentType: 'application/pdf'
-      }
-    ]
+    subject: 'Smilez Ayurvedic Booking',     // Subject line
+    text: `Hi ${name},\nThank you for using our booking service. Your appointment has been booked.\n\nSincerly,\nSmilez Ayurvedic Wellness Center`, // Plain text body
+    // attachments: [
+    //   {
+    //     filename: `${name}.pdf`,
+    //     content: fileBuffer, // Directly use fileBuffer        
+    //     contentType: 'application/pdf'
+    //   }
+    // ]
   };
 
   // Send the email

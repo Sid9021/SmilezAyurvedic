@@ -6,6 +6,8 @@ import Link from "next/link";
 
 const Contactusform = ({ isOpenForm, type }) => {
   let [isOpen, setIsOpen] = useState(false);
+  const [message, setMessage] = useState("");
+
 
   const [inputValues, setInputValues] = useState({
     input1: "",
@@ -34,9 +36,10 @@ const Contactusform = ({ isOpenForm, type }) => {
 
   const handleSubmit = async () => {
     // Submit function when Book Now button is clicked
-    alert(
-      `Name: ${inputValues.input1}, Email-address: ${inputValues.input2}, Message: ${inputValues.input3}`
-    );
+    // alert(
+    //   `Name: ${inputValues.input1}, Email-address: ${inputValues.input2}, Message: ${inputValues.input3}`
+    // );
+
 
     try {
       const response = await axios.get('/api/send-email', {
@@ -47,7 +50,7 @@ const Contactusform = ({ isOpenForm, type }) => {
         }
       });
       console.log("Response from backend: ", response.data);
-      alert('Message sent successfully!');
+      setMessage('Your Appoinment has been booked.');
       setInputValues({
         input1: "",
         input2: "",
@@ -56,7 +59,7 @@ const Contactusform = ({ isOpenForm, type }) => {
       setIsOpen(false);
     } catch (error) {
       console.error('Error sending message:', error);
-      alert('Failed to send message');
+      setMessage('Sorry..There might be some issue with the booking. Please contact us using this number: +918113930952');
     }
   };
 
@@ -73,9 +76,9 @@ const Contactusform = ({ isOpenForm, type }) => {
 
   return (
     <>
-      <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto md:ml-6 sm:pr-0">
+      <div className="inset-y-0 right-0 flex flex-col lg:flex-row items-center pr-2 sm:static sm:inset-auto md:ml-6 sm:pr-0">
         {type === "Service" ? (<>
-          <div className="">
+          <div className="-ml-6">
             <button
               type="button"
               className="justify-end text-xl w-full font-semibold bg-transparent py-4 px-6 lg:px-12 navbutton rounded-full hover:bg-navyblue hover:text-white"
@@ -88,7 +91,7 @@ const Contactusform = ({ isOpenForm, type }) => {
           <div className="">
             <button
               type="button"
-              className="justify-end text-base w-full font-medium mt-3 "
+              className="text-base left-0 font-medium mt-2"
               onClick={openModal}
             >
               Book Now
@@ -96,7 +99,7 @@ const Contactusform = ({ isOpenForm, type }) => {
           </div>
 
         </>) : type === "Banner" ? (<>
-          <div className="flex justify-center items-center ml-[29%] lg:-ml-5">
+          <div className="flex justify-center items-center lg:-ml-5">
             <button
               type="button"
               className="text-xl font-semibold bg-white py-4 px-6 text-black border border-black lg:px-12 navbutton rounded-full hover:bg-navyblue hover:text-white"
@@ -241,7 +244,11 @@ const Contactusform = ({ isOpenForm, type }) => {
                           Book Now
                         </span>
                       </button>
-
+                      {message && (
+                        <div className="mt-4 text-center">
+                          <p className="text-green-500 text-lg">{message}</p>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </Dialog.Panel>

@@ -38,9 +38,11 @@ const Data = ({isOpen}) => {
                 {item.name}
               </Link>
             ))}
+<div className="flex justify-start">
+<Contactusform isOpenForm={isOpen} type="MenuMobile"/>
 
+</div>
             {/* Book Now Button */}
-          <Contactusform isOpenForm={isOpen} type="MenuMobile"/>
           </div>
         </div>
       </div>

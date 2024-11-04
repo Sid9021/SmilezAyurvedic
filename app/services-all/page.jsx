@@ -16,19 +16,24 @@ export default function ServicesAll() {
   const [sidebarTop, setSidebarTop] = useState(115); // Initial top value, same as the navbar height
 
   useEffect(() => {
+    const container = document.querySelector('.container'); // Get the main container
+    const sidebar = document.getElementById('default-sidebar');
+
     const handleScroll = () => {
       const scrollTop = window.scrollY;
+      const containerBottom = container.offsetTop + container.offsetHeight;
+      const sidebarHeight = sidebar.offsetHeight;
 
-      // Adjust the top value based on scroll position, limit it to a minimum value
-      const newSidebarTop = Math.max(75, 110 - scrollTop); // Shrink the top value down to 40px
-
-      setSidebarTop(newSidebarTop);
-
-      // Adjust sticky state for navbar (optional, as you already have it)
-      if (scrollTop > 100) {
-        setIsSticky(true);
+      // Check if the sidebar should stop sticking when reaching the footer
+      if (scrollTop + sidebarHeight + 75 >= containerBottom) {
+        sidebar.style.position = 'absolute';
+        sidebar.style.top = `${containerBottom - sidebarHeight}px`;
+      } else if (scrollTop > 100) {
+        sidebar.style.position = 'fixed';
+        sidebar.style.top = '75px';
       } else {
-        setIsSticky(false);
+        sidebar.style.position = 'absolute';
+        sidebar.style.top = '115px'; // Initial top value
       }
     };
 
@@ -38,6 +43,7 @@ export default function ServicesAll() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
 
   const [activeLink, setActiveLink] = useState(null) // State to track the active link
 
@@ -62,37 +68,44 @@ export default function ServicesAll() {
     { name: "Post Partum Care", href: "/services-all/#Post Partum Care" },
   ]
 
-  useEffect(() => {
-    // Function to scroll to an element with an offset
-    function scrollToWithOffset(targetId, offset) {
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-        const scrollPosition = targetPosition - offset;
 
-        window.scrollTo({
-          top: scrollPosition,
-          behavior: 'smooth' // Smooth scrolling
-        });
-      }
-    }
+  const handleAnchorClick = (event,link) => {
+    setActiveLink(link);
+    event.preventDefault(); // Prevent default anchor behavior
+    const targetId = event.currentTarget.getAttribute('href').substring(1);
+    scrollToWithOffset(targetId, 80); // Scroll to the target section
+  };
 
-    // Event listener for anchor links
-    function handleAnchorClick(event) {
-      event.preventDefault();
-      const targetId = event.currentTarget.getAttribute('href').substring(1);
-      scrollToWithOffset(targetId, 80); // Adjust the offset value as needed
-    }
+  const scrollToWithOffset = (targetId, offset) => {
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+      const scrollPosition = targetPosition - offset;
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', handleAnchorClick);
-    });
-
-    // Clean up event listeners on component unmount
-    return () => {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.removeEventListener('click', handleAnchorClick);
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth', // Smooth scrolling
       });
+    }
+  };
+
+  
+
+  useEffect(() => {
+    const handleLoad = () => {
+      const hash = window.location.hash; // Check if there's a hash in the URL
+      if (hash) {
+        const targetId = hash.substring(1);
+        scrollToWithOffset(targetId, 150); // Adjust scroll offset to match sidebar
+      }
+    };
+  
+    // Scroll adjustment on page load
+    window.addEventListener("load", handleLoad);
+  
+    // Clean up the event listener on unmount
+    return () => {
+      window.removeEventListener("load", handleLoad);
     };
   }, []);
 
@@ -131,20 +144,20 @@ export default function ServicesAll() {
           </button> */}
           <aside
             id="default-sidebar"
-            className="fixed left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 hidden lg:block"
+            className={`fixed left-0 z-40 w-64 h-screen transition-transform ${isSticky ? 'block' : 'relative'} sm:translate-x-0 hidden lg:block`}
             aria-label="Sidebar"
-            style={{ top: `${sidebarTop}px` }}  // Dynamically setting the top value
+            style={{ top: `${isSticky ? sidebarTop : 'auto'}` }}
           >
             <div className="h-full px-3 py-3 overflow-y-auto bg-gray-50 dark:bg-gray-800">
               <ul className="space-y-1 font-medium">
                 {links.map((link) => (
                   <li key={link.name}>
                     <Link
-                      href={link.href}
-                      onClick={() => handleLinkClick(link.name)} // Handle link click
+                      href={`#${link.name}`}
+                      onClick={(event) => handleAnchorClick(event, link.name)} // Handle link click
                       className={`flex items-center p-2 rounded-lg dark:text-white group ${activeLink === link.name
-                          ? "bg-blue-500 text-white" // Active background color
-                          : "text-gray-900 hover:bg-gray-100 bg-gray-100 dark:hover:bg-gray-700" // Default state
+                        ? "bg-blue-500 text-white" // Active background color
+                        : "text-gray-900 hover:bg-gray-100 bg-gray-100 dark:hover:bg-gray-700" // Default state
                         }`}
                     >
                       {link.name}
@@ -407,7 +420,7 @@ export default function ServicesAll() {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
 
 
     </>
