@@ -168,7 +168,7 @@ export default function ServicesAll() {
             </div>
           </aside>
 
-          <div className="lg:ml-[15%] lg:w-[80%]: w-full p-4">
+          <div className="lg:ml-[15%] lg:w-[80%] w-full p-4">
             {/* Each card for a service */}
             <ServiceCard
               id="Tibetan Marma"
@@ -269,6 +269,9 @@ export default function ServicesAll() {
                 'Promotes healthy lifestyle habits',
               ]}
               packageOffers={[
+                "Personalized Nutrition Counseling",
+                "Detoxification Therapies",
+                "Holistic Fitness Programs"
               ]}
               imageUrl="/images/services/Weight Reduction.jpeg"
             />
@@ -429,7 +432,7 @@ export default function ServicesAll() {
 
 function ServiceCard({ id, title, description, imageUrl, benefits, packageOffers }) {
   return (
-    <div id={id} className="shadow-lg rounded-xl overflow-hidden w-[90vw] border-grey border-2 flex flex-col lg:flex-row bg-gradient-to-br from-[#8a8aec] to-white hover:shadow-2xl transition-shadow duration-300 mt-12">
+    <div id={id} className="shadow-lg rounded-xl overflow-hidden w-[83dvw] h-full border-grey border-2 flex flex-col lg:flex-row bg-gradient-to-br from-[#8a8aec] to-white hover:shadow-2xl transition-shadow duration-300 mt-12">
       {/* Image Section */}
       <div className="lg:w-[30%] w-full h-60 lg:h-auto overflow-hidden relative">
         <Image src={imageUrl} alt={title} layout="fill" objectFit="cover" className="rounded-t-xl lg:rounded-t-none lg:rounded-l-xl" />
