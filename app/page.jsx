@@ -1,3 +1,5 @@
+// app/page.js or app/page.jsx
+
 import Banner from "./components/Banner/index"
 import Aboutus from "./components/Aboutus/index"
 import Dedicated from "./components/Dedicated/index"
@@ -15,6 +17,13 @@ import Services from "./components/Services/page"
 import Featured from "./components/Featured"
 import Navbar from "./components/Navbar/index"
 import Footer from "./components/Footer/index"
+
+export async function generateMetadata() {
+  return {
+    title: 'Smilez Wellness Ayurvedic Center',
+    description: 'Smilez Ayurveda, set in the peaceful greenery of Thottakattukara, Aluva, is a wellness sanctuary offering Ayurvedic treatments, educational workshops, and comfortable stays for holistic healing and renewal.',
+  }
+}
 
 export default function Home() {
   return (
