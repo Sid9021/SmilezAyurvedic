@@ -1,15 +1,7 @@
-'use client'
-import { useState } from "react";
 import Image from "next/image";
 import Contactusform from "../Navbar/Contactus";
 
 const Banner = () => {
-  const [videoReady, setVideoReady] = useState(false);
-
-  const handleVideoReady = () => {
-    setVideoReady(true);
-  };
-
   return (
     <div className="lg:mx-auto lg:max-w-8xl lg:my-10 sm:py-10 lg:py-8 lg:h-full">
       <div className="flex flex-col items-center lg:items-start md:flex-row lg:justify-around relative w-full lg:w-auto">
@@ -43,19 +35,13 @@ const Banner = () => {
 
         {/* MOBILE VIDEO */}
         <div className="block md:hidden bg-black w-full h-full relative">
-          {videoReady ? (
-            <video
-              src="/videos/hero_mobile.mp4"
-              autoPlay
-              loop
-              muted
-              preload="auto"
-              className="w-full opacity-50"
-              onCanPlayThrough={handleVideoReady}
-            />
-          ) : (
-            <div className="w-full h-full bg-black opacity-50" />
-          )}
+          <video
+            src="/videos/hero_mobile.mp4"
+            autoPlay
+            loop
+            muted
+            className="w-full opacity-50"
+          />
         </div>
       </div>
     </div>
