@@ -1,12 +1,13 @@
 {
-  "name": "desgy",
+  "name": "smilez",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",
@@ -24,6 +25,7 @@
     "lodash": "^4.17.21",
     "mailgun.js": "^10.2.3",
     "next": "13.4.2",
+    "next-sitemap": "^4.2.3",
     "nodemailer": "^6.9.14",
     "pdf-lib": "^1.17.1",
     "postcss": "8.4.23",
