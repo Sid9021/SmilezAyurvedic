@@ -49,7 +49,6 @@ const Banner = () => {
               autoPlay
               loop
               muted
-              playsInline
               preload="auto"
               className="w-full opacity-50"
               onCanPlayThrough={handleVideoReady}
